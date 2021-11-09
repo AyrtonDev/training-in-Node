@@ -1,0 +1,17 @@
+{{>partials/header}}
+    <p>Teste</p>
+    <span>Ola {{ name }} {{lastName}}, tudo bem?</span>
+    {{#testingAge}}
+        <p>Você tem {{age}} anos?</p>
+    {{/testingAge}}
+    {{^testingAge}}
+        <p>Você parece muito novo!</p>
+    {{/testingAge}}
+    <hr/>
+    <h2>Suas habilidades são:</h2>
+    <ul>
+        {{#skills}}
+            <li>Tecnologia - {{title}} / Nivel - {{level}}</li>
+        {{/skills}}
+    </ul>
+{{>partials/footer}}
