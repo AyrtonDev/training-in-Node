@@ -25,12 +25,35 @@ router.get("/", (req: Request, res: Response) => {
   });
 });
 
-router.get("/Contato", (req: Request, res: Response) =>
+router.get("/contato", (req: Request, res: Response) =>
   res.render("pages/contato")
 );
 
-router.get("/Sobre", (req: Request, res: Response) =>
+router.get("/sobre", (req: Request, res: Response) =>
   res.render("pages/sobre")
 );
+
+router.get("/name", (req: Request, res: Response) => {
+  res.render("pages/name");
+});
+
+router.post("/name", (req: Request, res: Response) => {
+  let showAge: boolean = false;
+  let name: string = req.body.name as string;
+  let age: number = 0;
+
+  if (req.body.age) {
+    let year: number = parseInt(req.body.age as string);
+    let currentYear: number = new Date().getFullYear();
+    age = currentYear - year;
+    showAge = true;
+  }
+
+  res.render("pages/name", {
+    name,
+    age,
+    showAge,
+  });
+});
 
 export default router;
