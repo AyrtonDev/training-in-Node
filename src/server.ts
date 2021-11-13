@@ -1,10 +1,12 @@
 import express, { Request, Response, urlencoded } from "express";
 import path from "path";
 import mustache from "mustache-express";
-require("dotenv").config();
+import dotenv from "dotenv";
 
 import mainRouter from "./routes/mainRoutes";
 import newsRouter from "./routes/newsRoutes";
+
+dotenv.config();
 
 const port = process.env.NODE_PUBLIC_PORT_LISTEN_SERVER;
 
