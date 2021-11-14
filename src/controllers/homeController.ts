@@ -1,7 +1,13 @@
 import { Request, Response } from "express";
 import { Skill } from "../models/Skill";
+import User from "../models/User";
 
-export const home = (req: Request, res: Response) => {
+export const home = async (req: Request, res: Response) => {
+  let users = await User.findOne({
+    email: "ayrton@gmail.com",
+  });
+  console.log("USUARIOS", users);
+
   let age: number = 16;
   let testingAge: boolean;
 

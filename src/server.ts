@@ -5,10 +5,13 @@ import dotenv from "dotenv";
 
 import mainRouter from "./routes/mainRoutes";
 import newsRouter from "./routes/newsRoutes";
+import { mongoConnect } from "./database/mongo";
 
 dotenv.config();
 
 const port = process.env.NODE_PUBLIC_PORT_LISTEN_SERVER;
+
+mongoConnect();
 
 const server = express();
 
