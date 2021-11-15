@@ -1,12 +1,14 @@
 {{>partials/header}}
     <p>Teste</p>
-    <span>Ola {{ name }} {{lastName}}, tudo bem?</span>
-    {{#testingAge}}
-        <p>Você tem {{age}} anos?</p>
-    {{/testingAge}}
-    {{^testingAge}}
-        <p>Você parece muito novo!</p>
-    {{/testingAge}}
+    {{#users}}
+        <span>Ola {{ name.firstName }} {{name.lastName}}, tudo bem?</span>
+        {{#testingAge}}
+            <p>Você nasceu em  {{birthYear}} anos?</p>
+        {{/testingAge}}
+        {{^testingAge}}
+            <p>Você parece muito novo!</p>
+        {{/testingAge}}
+    {{/users}}
     <hr/>
     <h2>Suas habilidades são:</h2>
     <ul>
